@@ -1,10 +1,29 @@
-<div class="body">
-  <div id="scoreBox">Score: {{score}}</div>
-  <div id="hiscoreBox">HiScore: {{hiscoreval}}</div>
+<alert type="danger">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div id="board" #boardElement>
+          <div class="head" id="head"></div>
+          <div class="snake"></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <alert type="success">
+          <div class="jumbotron">
+            <h5 class="display-5">Play Snake Game!!</h5>
+          </div>
+          <div>
+            <h3>Score: {{score}}</h3>
+          </div>
+          <div>
+            <h3>HiScore: {{hiscoreval}}</h3>
+          </div>
+          <p class="lead">Enter Any Key to Start the Game</p>
+          <p class="lead">Use the Arrow keys to move directions</p>
+        </alert>
+      </div>
+    </div>
 
-  <div id="board" #boardElement>
-    <div class="head" id="head"></div>
-    <div class="snake"></div>
 
   </div>
-</div>
+</alert>

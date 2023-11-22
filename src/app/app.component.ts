@@ -1,5 +1,10 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,6 +24,12 @@ export class AppComponent implements OnInit {
 
   food = { x: 6, y: 7 };
   hiscoreval: number = 0;
+  tiles: Tile[] = [
+    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
+    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
+    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
+    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
+  ];
   constructor(private renderer: Renderer2) {
 
   }
@@ -125,29 +136,16 @@ export class AppComponent implements OnInit {
 
       if (index === 0) {
         let eye1 = document.createElement('div');
-        let eye2 = document.createElement('div');
         eye1.className = 'eye1'
-        eye1.style.background = 'black !important';
-        eye1.style.border = '2px solid black';
-        eye1.style.margin = '10px';
+        eye1.style.border = '7px solid black';
         eye1.style.borderRadius = '87px';
         eye1.style.height = '2px';
         eye1.style.width = '2px';
-        eye1.style.marginLeft = '4px';
+        eye1.style.margin = '14px';
         eye1.style.marginBottom = '4px';
+        eye1.style.alignContent = 'center'
         snakeElement.appendChild(eye1)
 
-        eye2.className = 'eye2'
-        eye2.style.background = 'black !important';
-        eye2.style.border = '2px solid black';
-        // eye1.style.margin = '10px';
-        eye2.style.borderRadius = '33px';
-        eye2.style.height = '2px';
-        eye2.style.width = '2px';
-        eye2.style.marginLeft = '14px!important;'
-        eye2.style.marginTop = '-10px';
-
-        snakeElement.appendChild(eye2)
         snakeElement.classList.add('head');
 
       } else {
